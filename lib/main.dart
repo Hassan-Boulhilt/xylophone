@@ -12,6 +12,7 @@ class XylophoneApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.lightGreen.shade500,
           title: const Text(
             'Xylophone',
             style: TextStyle(color: Colors.white),
