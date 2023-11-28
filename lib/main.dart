@@ -1,3 +1,5 @@
+// ignore: unused_import
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,9 +20,7 @@ class XylophoneApp extends StatelessWidget {
             style: TextStyle(color: Colors.white),
           ),
         ),
-        body: const Center(
-          child: Text('Hello World!'),
-        ),
+        body: const Center(),
       ),
     );
   }
