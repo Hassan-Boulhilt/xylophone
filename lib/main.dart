@@ -32,18 +32,17 @@ class _XylophoneAppState extends State<XylophoneApp> {
             ),
           ),
           body: ListView.builder(
-            itemCount: 8, // Number of items in the list
+            itemExtent: 95,
+            itemCount: 7, // Number of items in the list
             itemBuilder: (BuildContext context, int index) {
+              index = index + 1;
               return ListTile(
+                tileColor: Colors.cyan[100 * index],
                 title: TextButton(
                   onPressed: () {
                     playSound('note$index.wav');
                   },
-                  child: Container(
-                    width: double.infinity,
-                    height: 75,
-                    color: Colors.cyan[100 * index],
-                  ),
+                  child: const Text(''),
                 ),
               );
             },
