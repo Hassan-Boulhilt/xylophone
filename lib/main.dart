@@ -24,83 +24,30 @@ class _XylophoneAppState extends State<XylophoneApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.lightGreen.shade500,
-          title: const Text(
-            'Xylophone',
-            style: TextStyle(color: Colors.white),
+          appBar: AppBar(
+            backgroundColor: Colors.lightGreen.shade500,
+            title: const Text(
+              'Xylophone',
+              style: TextStyle(color: Colors.white),
+            ),
           ),
-        ),
-        body: Center(
-          child: Column(
-            children: [
-              TextButton(
+          body: ListView.builder(
+            itemCount: 8, // Number of items in the list
+            itemBuilder: (BuildContext context, int index) {
+              return ListTile(
+                title: TextButton(
                   onPressed: () {
-                    playSound('note1.wav');
+                    playSound('note$index.wav');
                   },
                   child: Container(
                     width: double.infinity,
-                    height: 50,
-                    color: Colors.amber.shade50,
-                  )),
-              TextButton(
-                  onPressed: () {
-                    playSound('note2.wav');
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    height: 50,
-                    color: Colors.amber[900],
-                  )),
-              TextButton(
-                  onPressed: () {
-                    playSound('note3.wav');
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    height: 50,
-                    color: Colors.blue,
-                  )),
-              TextButton(
-                  onPressed: () {
-                    playSound('note4.wav');
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    height: 50,
-                    color: Colors.green,
-                  )),
-              TextButton(
-                  onPressed: () {
-                    playSound('note5.wav');
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    height: 50,
-                    color: Colors.red,
-                  )),
-              TextButton(
-                  onPressed: () {
-                    playSound('note6.wav');
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    height: 50,
-                    color: Colors.black,
-                  )),
-              TextButton(
-                  onPressed: () {
-                    playSound('note7.wav');
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    height: 50,
-                    color: Colors.deepPurple,
-                  )),
-            ],
-          ),
-        ),
-      ),
+                    height: 75,
+                    color: Colors.cyan[100 * index],
+                  ),
+                ),
+              );
+            },
+          )),
     );
   }
 }
